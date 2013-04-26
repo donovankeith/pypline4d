@@ -1,0 +1,5 @@
+FEATURE IDEAS
+--------------
+
+-Proxy Maker: duplicates the object, poly crunches it, appends the word PROXY, and toggles it off in the render and toggles the original off in the editor.
+	+May or may not use X-Refs to handle proxy.
