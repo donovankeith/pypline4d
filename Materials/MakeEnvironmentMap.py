@@ -90,15 +90,22 @@ def main():
     bake_tag[c4d.BAKETEXTURE_SUPERSAMPLING] = 1
     bake_tag[c4d.BAKETEXTURE_CHANNEL_REFLECTION] = True #Bake reflection
 
-    #Add filename
-    tex_path = obj.GetName()
-    bake_tag[c4d.BAKETEXTURE_NAME] = obj.GetName()
+    #Open a save dialog
+    doc_path = doc[c4d.DOCUMENT_PATH]
+    default_name = '' + obj.GetName() + "_env"
+    img_path = c4d.storage.SaveDialog(c4d.FILESELECTTYPE_IMAGES, title="Bake to...", def_path=doc_path)
+    if img_path is None: return
 
     #Add bake tag to sphere
     sphere.InsertTag(bake_tag)
 
     #Insert the sphere
     doc.InsertObject(sphere)
+    
+    #Add filename
+    bc = bake_tag.GetData()
+    bc.SetFilename(c4d.BAKETEXTURE_NAME, img_path)
+    bake_tag.SetData(bc)
     
     #Bake the object - tex name is ObjName_ENV
     c4d.CallButton(bake_tag,c4d.BAKETEXTURE_BAKE)
@@ -112,6 +119,60 @@ def main():
     #Delete the material
     #silver_mat.Remove()
 
+    #clone the current material
+    def GetLastMaterial(obj):
+        tags = obj.GetTags()
+        cur_tag = None
+
+        #Keep popping until you find a material
+        while len(tags)>0 and cur_tag is not None:
+            #If it's a texture tag, return its material
+            if isinstance(cur_tag, c4d.TextureTag):
+                return cur_tag.GetMaterial()
+            
+            #Not a texture tag, go to the next one
+            cur_tag = tags.pop()
+
+        #None of the tags are materials, return None
+        return None
+    
+    #Get the right-most material
+    ref_material = GetLastMaterial(obj)
+    env_material = None
+    
+    #If there isn't one, make one
+    if ref_material is None:
+        env_material = c4d.BaseMaterial(c4d.Mmaterial)
+    #If there is, make a clone
+    else:
+        env_material = ref_material.GetClone()
+
+    #Make a new material
+    env_material.SetName(env_material.GetName() + " Env")
+    
+    if ref_material:
+        #Turn on Env if obj is Reflective
+        env_material[c4d.MATERIAL_USE_ENVIRONMENT] = ref_material[c4d.MATERIAL_USE_REFLECTION]
+        
+        #Use the same color
+        env_material[c4d.MATERIAL_ENVIRONMENT_COLOR] = ref_material[c4d.MATERIAL_REFLECTION_COLOR]
+        
+        #Use the same brightness
+        env_material[c4d.MATERIAL_ENVIRONMENT_BRIGHTNESS] = ref_material[c4d.MATERIAL_REFLECTION_BRIGHTNESS]
+        
+        #Set mix mode to multiply
+        env_material[c4d.MATERIAL_REFLECTION_TEXTUREMIXING] = 3
+
+    """
+    ref_tex = env_material[c4d.MATERIAL_REFLECTION_SHADER].GetClone()
+    env_tex = ref_tex.GetClone()
+    env_texture[c4d.BITMAPSHADER_FILENAME] = img_path + "Reflection.psd"
+    env_material[c4d.MATERIAL_ENVIRONMENT_SHADER]= env_texture
+    env_material.InsertShader(env_texture)
+    """
+    
+    doc.InsertMaterial(env_material)
+    
     doc.EndUndo()
     c4d.EventAdd()
 
