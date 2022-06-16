@@ -15,6 +15,7 @@ Version: 1.0.0
 - Will give unpredictable results with non-planar polygons.
 - Written in Cinema 4D 26.0, likely won't work with much older versions.
 - Code is unsupported, use at your own risk.
+- Because I'm using the built-in Frame Selected command, you'll need two undos to undo this script.
 
 ## License
 
