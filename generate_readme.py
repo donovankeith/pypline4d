@@ -6,6 +6,10 @@ import os
 import ast
 
 def list_py_scripts(root_dir):
+    header = """# pypline4d
+
+A series of utility scripts for Maxon's Cinema 4D (c4d)"""
+
     toc = ""
 
     exclude = set(['.git'])
@@ -48,7 +52,8 @@ def list_py_scripts(root_dir):
                     toc += f"| [{name}]({filepath}) | {description} |\n"
 
         toc += "\n"
-    with open("TOC.md", "w") as f:
+    with open("README.md", "w") as f:
+        f.write(header)
         f.write(toc)
 
 list_py_scripts(os.path.dirname(__file__))

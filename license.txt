@@ -1,7 +1,7 @@
-pypline4d 0.01
+pypline4d
 Written for CINEMA 4D R12.048
 
-Copyright (C) 2012 by Donovan Keith (www.donovankeith.com)
+Copyright (C) 2012-2023 by Donovan Keith (www.donovankeith.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

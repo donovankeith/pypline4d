@@ -1,4 +1,5 @@
-"""Name-en-US: Bake All MoGraph v0.1
+"""Name-en-US: Bake All MoGraph
+Description-en-US: Uses standard MoGraph baking commands to bake MoGraph objects.
 
 by
 Donovan Keith

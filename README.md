@@ -1,10 +1,10 @@
 # pypline4d
 
-A series of utility scripts for Maxon's Cinema 4D (c4d)
+A series of utility scripts for Maxon's Cinema 4D (c4d)## pypline4d
 
 | Name | Description |
 |------|-------------|
-| [generate_docs.py](generate_docs.py) | Createas TOC.md which lists all .py files in this repo. |
+| [generate_docs.py](generate_readme.py) | Createas TOC.md which lists all .py files in this repo. |
 
 ## UI
 
@@ -35,14 +35,14 @@ A series of utility scripts for Maxon's Cinema 4D (c4d)
 | [Animate on Spline](Animation/AnimateOnSpline.py) | Creates an Align To Spline tag with keys at the start/end of animation. |
 | [Linear All Keys](Animation/LinearAllKeys.py) | Selects all keys and sets them to Linear interpolation |
 | [Split Keys](Animation/SplitKeys.py) | Takes the selected keys and splits them into two keys. |
-| [CameraMorphKeys v0.02](Animation/CameraMorphKeys.py) | Takes first selected CameraMorph tag and automatically add keys based on the |
+| [Camera Morph Keys](Animation/CameraMorphKeys.py) | Takes first selected CameraMorph tag and automatically add keys based on the |
 | [Spline Clamp All Keys](Animation/SplineClampAllKeys.py) | Selects all keys and to Smooth and Clamped. |
 
 ## Modeling
 
 | Name | Description |
 |------|-------------|
-| [Compound Boolean Union v0.01](Modeling/CompoundBooleUnion.py) | Takes all selected objects, and combines them into a nested boolean hierarchy |
+| [Compound Boolean Union](Modeling/CompoundBooleUnion.py) | Takes all selected objects, and combines them into a nested boolean hierarchy |
 | [Orient View to Selected Polygon](Modeling/OrientViewToSelectedPolygon.py) | Moves and targets camera toward selected polygon. |
 | [Polys to Window](Modeling/PolyToWindow.py) | Converts the currently selected polygon objects to windows |
 
@@ -51,7 +51,7 @@ A series of utility scripts for Maxon's Cinema 4D (c4d)
 | Name | Description |
 |------|-------------|
 | [C4D Sync](C4D Sync/c4dsync.py) | Reroutes Cinema 4D preferences to a directory in your DropBox. |
-| [Bake All MoGraph v0.1](C4D Sync/BakeAllMoGraph.py) |  |
+| [Bake All MoGraph](C4D Sync/BakeAllMoGraph.py) | Uses standard MoGraph baking commands to bake MoGraph objects. |
 
 ## PolyCruncher
 

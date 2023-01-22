@@ -1,4 +1,4 @@
-"""Name-en-US: CameraMorphKeys v0.02
+"""Name-en-US: Camera Morph Keys
 Description-en-US: Takes first selected CameraMorph tag and automatically add keys based on the
 number of objects in the multi-morph list.
 

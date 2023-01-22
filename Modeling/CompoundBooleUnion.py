@@ -1,4 +1,4 @@
-"""Name-en-US: Compound Boolean Union v0.01
+"""Name-en-US: Compound Boolean Union
 Description-en-US: Takes all selected objects, and combines them into a nested boolean hierarchy
 Written for CINEMA 4D R14.025
 
