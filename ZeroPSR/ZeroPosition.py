@@ -12,19 +12,20 @@ v0.0: Main functionality implemented
 
 import c4d
 from c4d import gui
-#Welcome to the world of Python
+# Welcome to the world of Python
 
 
 def main():
-    #Get the active objects
+    # Get the active objects
     objs = doc.GetActiveObjects(flags=c4d.GETACTIVEOBJECTFLAGS_0)
 
-    #Loop through the active objects
+    # Loop through the active objects
     for obj in objs:
-        #Set Position
+        # Set Position
         obj.SetRelPos(c4d.Vector(0.0))
 
     c4d.EventAdd()
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()

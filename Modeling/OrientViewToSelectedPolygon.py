@@ -48,8 +48,10 @@ import c4d
 doc: c4d.documents.BaseDocument  # The active document
 op: Optional[c4d.BaseObject]  # The active object, None if unselected
 
+
 def error_message(msg="Select a single polygon on a Poly object."):
     c4d.StatusSetText("View to Polygon: [ERROR] ", msg)
+
 
 def main() -> None:
     if not op:
@@ -58,49 +60,49 @@ def main() -> None:
     if not op.IsInstanceOf(c4d.Opolygon):
         error_message()
         return
-        
+
     polygon_base_select = op.GetPolygonS()
     if not polygon_base_select:
         error_message("No selected polygon.")
-    
+
     poly_count = op.GetPolygonCount()
     if not poly_count:
         error_message("Object has no polygons.")
-    
+
     first_selected = None
     for i, selected in enumerate(polygon_base_select.GetAll(poly_count)):
         if selected:
             first_selected = i
             break
-            
+
     if first_selected is None:
         error_message("No polygons selected.")
-    
+
     points = op.GetAllPoints()
     if not points:
         error_message("Object has no points.")
-        
+
     poly = op.GetPolygon(first_selected)
     a = points[poly.a]
     b = points[poly.b]
     c = points[poly.c]
-    
+
     point_sum = a + b + c
     poly_point_count = 3
     if not poly.IsTriangle():
         point_sum += points[poly.d]
         poly_point_count += 1
-        
-    center = point_sum / poly_point_count    
+
+    center = point_sum / poly_point_count
     normal = (b-a).Cross(c-b).GetNormalized()
-    
+
     op_mg = op.GetMg()
     center_global = op_mg.Mul(center)
     normal_global = op_mg.MulV(normal)
-    
+
     bd = doc.GetActiveBaseDraw()
     camera = bd.GetEditorCamera()
-    
+
     camera_offset_amount = 500.0
     camera_pos = center_global + normal_global * camera_offset_amount
     camera_to_poly = center_global - camera_pos
@@ -111,7 +113,7 @@ def main() -> None:
     doc.StartUndo()
     doc.AddUndo(c4d.UNDOTYPE_CHANGE, camera)
     camera.SetMg(camera_mg)
-    c4d.CallCommand(12151) # Frame Selected Objects
+    c4d.CallCommand(12151)  # Frame Selected Objects
     doc.EndUndo()
     c4d.EventAdd()
 
@@ -120,6 +122,7 @@ def state():
     if op and op.IsInstanceOf(c4d.Opolygon):
         return c4d.CMD_ENABLED
     return False
+
 
 if __name__ == '__main__':
     main()

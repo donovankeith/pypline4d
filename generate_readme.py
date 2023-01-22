@@ -5,6 +5,7 @@ Creates README.md which lists all .py files in this repo.
 import os
 import ast
 
+
 def list_py_scripts(root_dir):
     header = """# pypline4d
 
@@ -13,7 +14,7 @@ A series of utility scripts for Maxon's Cinema 4D (c4d)"""
     toc = ""
 
     exclude = set(['.git'])
-    
+
     # Need topdown to ensure predictable order for in-place remove
     for root, dirs, files in os.walk(root_dir, topdown=True):
         # Remove "bad" directories
@@ -56,11 +57,13 @@ A series of utility scripts for Maxon's Cinema 4D (c4d)"""
         f.write(header)
         f.write(toc)
 
+
 list_py_scripts(os.path.dirname(__file__))
 
 
 def main():
     list_py_scripts(os.path.dirname(__file__))
+
 
 if __name__ == "__main__":
     main()

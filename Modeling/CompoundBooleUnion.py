@@ -40,40 +40,43 @@ Description-US: Combine all selected objects into one boolean
 
 import c4d
 from c4d import gui
-#Welcome to the world of Python
+# Welcome to the world of Python
+
 
 def make_boole_union(obj_a, obj_b):
     """Take obj_a and obj_b and combines them under a boolean union object.
     returns the boolean object. Make sure that these objects aren't attached
     to a scene as this function does not clone them"""
 
-    #If we're missing any objects, return
+    # If we're missing any objects, return
     if obj_a is None or obj_b is None:
         return
-    
-    #Create a union type boolean object
-    boole = c4d.BaseObject(c4d.Oboole)
-    boole[c4d.BOOLEOBJECT_TYPE] = 0 #A Union B
 
-    #Put them inside the boole
+    # Create a union type boolean object
+    boole = c4d.BaseObject(c4d.Oboole)
+    boole[c4d.BOOLEOBJECT_TYPE] = 0  # A Union B
+
+    # Put them inside the boole
     obj_a.InsertUnder(boole)
     obj_b.InsertUnder(boole)
-    
-    #Rename the boolean object to: ObjA + ObjB
-    boole.SetName( obj_a.GetName() + " + " + obj_b.GetName())
-    
-    #Return the boolean object
+
+    # Rename the boolean object to: ObjA + ObjB
+    boole.SetName(obj_a.GetName() + " + " + obj_b.GetName())
+
+    # Return the boolean object
     return boole
 
+
 def main():
-    #Get the selected objects
+    # Get the selected objects
     objs = doc.GetActiveObjects(flags=c4d.GETACTIVEOBJECTFLAGS_CHILDREN)
-    if objs is None or len(objs) <2:
+    if objs is None or len(objs) < 2:
         gui.MessageDialog('You need to select 2+ objects to run this command.')
         return
 
-    #Loop through all the objects, making booles along the way
-    prev_boole = make_boole_union(objs[1].GetClone(c4d.COPYFLAGS_NO_HIERARCHY), objs[0].GetClone(c4d.COPYFLAGS_NO_HIERARCHY))
+    # Loop through all the objects, making booles along the way
+    prev_boole = make_boole_union(objs[1].GetClone(
+        c4d.COPYFLAGS_NO_HIERARCHY), objs[0].GetClone(c4d.COPYFLAGS_NO_HIERARCHY))
 
     latter_objs = objs[2:]
     print(latter_objs)
@@ -81,13 +84,15 @@ def main():
     for obj in latter_objs:
         print("In the latter_objs")
         print(obj.GetName())
-        prev_boole = make_boole_union(obj.GetClone(c4d.COPYFLAGS_NO_HIERARCHY), prev_boole.GetClone())
+        prev_boole = make_boole_union(obj.GetClone(
+            c4d.COPYFLAGS_NO_HIERARCHY), prev_boole.GetClone())
 
-    #Add the objects to the document    
+    # Add the objects to the document
     doc.InsertObject(prev_boole)
-    
-    #Tell C4D something has changed
+
+    # Tell C4D something has changed
     c4d.EventAdd()
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()

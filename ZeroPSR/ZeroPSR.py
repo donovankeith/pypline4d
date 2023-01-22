@@ -15,22 +15,24 @@ TO DO:
 
 import c4d
 from c4d import gui
-#Welcome to the world of Python
+# Welcome to the world of Python
+
 
 def main():
-    #Get the active objects
+    # Get the active objects
     objs = doc.GetActiveObjects(flags=c4d.GETACTIVEOBJECTFLAGS_0)
 
-    #Loop through the active objects
+    # Loop through the active objects
     for obj in objs:
-        #Set Position and Rotation to 0, 0, 0
+        # Set Position and Rotation to 0, 0, 0
         obj.SetRelPos(c4d.Vector(0.0))
         obj.SetRelRot(c4d.Vector(0.0))
 
-        #Set Scale to 1, 1, 1
+        # Set Scale to 1, 1, 1
         obj.SetRelScale(c4d.Vector(1.0))
 
     c4d.EventAdd()
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()

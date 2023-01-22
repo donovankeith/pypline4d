@@ -44,9 +44,10 @@ Description-US: Creates a keyframe for each camera in the selected camera morph 
 import c4d
 import os
 from c4d import gui
-#Welcome to the world of Python
+# Welcome to the world of Python
 
 debug = True
+
 
 def symlink(source, link_name):
     os_symlink = getattr(os, "symlink", None)
@@ -61,10 +62,11 @@ def symlink(source, link_name):
         if csl(link_name, source, flags) == 0:
             raise ctypes.WinError()
 
+
 def main():
-    #gui.MessageDialog('Hello World!')
-    
-    #Get some default locations
+    # gui.MessageDialog('Hello World!')
+
+    # Get some default locations
     usr_path_prefs = c4d.storage.GeGetC4DPath(c4d.C4D_PATH_PREFS)
     usr_path_resource = c4d.storage.GeGetC4DPath(c4d.C4D_PATH_RESOURCE)
     usr_path_library = c4d.storage.GeGetC4DPath(c4d.C4D_PATH_LIBRARY_USER)
@@ -80,20 +82,21 @@ def main():
         print(usr_path_home)
         print(usr_path_startup)
         print(usr_path_home)
-    
-    #Open a file picker
+
+    # Open a file picker
     usr_save_to = c4d.storage.LoadDialog(
         type=c4d.FILESELECTTYPE_ANYTHING,
         title="Where would you like to place your C4D Sync folder?",
-        flags=c4d.FILESELECT_DIRECTORY, 
+        flags=c4d.FILESELECT_DIRECTORY,
         def_path=usr_path_desktop)
-        
+
     print("User said to save here: ", usr_save_to)
 
-    save_to = os.path.join(usr_save_to,"C4D Sync")
+    save_to = os.path.join(usr_save_to, "C4D Sync")
     print(save_to)
-    
+
     print("Creating symlink... ", symlink(usr_path_documents, save_to))
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()

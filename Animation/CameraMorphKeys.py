@@ -44,65 +44,68 @@ Description-US: Creates a keyframe for each camera in the selected camera morph 
 
 import c4d
 
+
 def main():
     doc.StartUndo()
 
-    #Get the CameraMorph tag
+    # Get the CameraMorph tag
     tag = doc.GetActiveTag()
-    
-    #Stop if the tag is of the wrong type
+
+    # Stop if the tag is of the wrong type
     if tag is None or tag[c4d.TMORPHCAM_LIST_LINKS] is None:
         return
 
     cam_list_raw = tag[c4d.TMORPHCAM_LIST_LINKS]
     cam_count = cam_list_raw.GetObjectCount()
 
-    #Find the blend track
+    # Find the blend track
     blend_track = tag.FindCTrack(c4d.TMORPHCAM_BLEND)
-    
-    #If there isn't a blend track, create and insert it.
+
+    # If there isn't a blend track, create and insert it.
     if blend_track is None:
-        blend_track = c4d.CTrack(tag, c4d.DescID(c4d.DescLevel(c4d.TMORPHCAM_BLEND, c4d.DTYPE_REAL, 0)))
+        blend_track = c4d.CTrack(tag, c4d.DescID(
+            c4d.DescLevel(c4d.TMORPHCAM_BLEND, c4d.DTYPE_REAL, 0)))
         tag.InsertTrackSorted(blend_track)
 
-    #Get the track's F-Curve, and delete existing keys
+    # Get the track's F-Curve, and delete existing keys
     curve = blend_track.GetCurve()
     curve.FlushKeys()
-    
-    #If there are 1 or fewer cameras, pretend there are two
-    if cam_count==0 or cam_count==1:
-        cam_count = 2 #So that we can have a key at 0 and 100%
-    
-    #Get document timing info
+
+    # If there are 1 or fewer cameras, pretend there are two
+    if cam_count == 0 or cam_count == 1:
+        cam_count = 2  # So that we can have a key at 0 and 100%
+
+    # Get document timing info
     min_time = doc.GetMinTime().Get()
     max_time = doc.GetMaxTime().Get()
     length_time = max_time - min_time
     time_chunk = length_time/(cam_count-1)
     fps = doc.GetFps()
-    
-    #Add a key for each camera
-    #doc.AddUndo(c4d.UNDOTYPE_CHANGE,op)
+
+    # Add a key for each camera
+    # doc.AddUndo(c4d.UNDOTYPE_CHANGE,op)
     for i in range(cam_count):
-        #Create a key
+        # Create a key
         key = c4d.CKey()
-        
-        #Evenly distribute value
+
+        # Evenly distribute value
         value = 0.0
         if i is not 0:
             value = (1.0 / float(cam_count-1)) * float(i)
         key.SetValue(curve, value)
-        
-        #Calculate the correct time
+
+        # Calculate the correct time
         ideal_time = c4d.BaseTime(time_chunk*i + min_time)
         ideal_time.Quantize(fps)
-        
-        #Set the key time
+
+        # Set the key time
         key.SetTime(curve, ideal_time)
         curve.InsertKey(key)
         doc.AddUndo(c4d.UNDOTYPE_NEW, key)
-        
+
     doc.EndUndo()
     c4d.EventAdd()
+
 
 if __name__ == '__main__':
     main()

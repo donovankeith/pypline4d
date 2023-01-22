@@ -14,15 +14,16 @@ from c4d import gui
 
 
 def main():
-    #Get the active objects
+    # Get the active objects
     objs = doc.GetActiveObjects(flags=c4d.GETACTIVEOBJECTFLAGS_0)
 
-    #Loop through the active objects
+    # Loop through the active objects
     for obj in objs:
-        #Set Scale to 1, 1, 1
+        # Set Scale to 1, 1, 1
         obj.SetRelScale(c4d.Vector(1.0))
 
     c4d.EventAdd()
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()

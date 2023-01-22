@@ -41,16 +41,18 @@ Description-US: ScriptDescription
 
 import c4d
 
+
 def main():
     doc.StartUndo()
 
-    #Loop through all active objects
+    # Loop through all active objects
     objs = doc.GetActiveObjects(flags=c4d.GETACTIVEOBJECTFLAGS_0)
 
     for obj in objs:
-        pass #ToDo: Add main logic
+        pass  # ToDo: Add main logic
 
     doc.EndUndo()
+
 
 if __name__ == '__main__':
     main()
