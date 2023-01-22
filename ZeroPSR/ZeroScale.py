@@ -1,5 +1,5 @@
 """
-Zero Scale v0.01
+Zero Scale
 Takes the currently selected objects and sets their scale to 1, 1, 1
 
 by

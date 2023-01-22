@@ -1,4 +1,4 @@
-"""Name-en-US: Make Environment Map v0.01
+"""Name-en-US: Make Environment Map
 Description-en-US: Renders an environment map for the selected object.
 
 Written for CINEMA 4D R14.025

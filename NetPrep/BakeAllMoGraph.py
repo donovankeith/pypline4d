@@ -1,5 +1,5 @@
 """Name-en-US: Bake All Mograph
-Description-en-US:  Bake All MoGraph v0.1
+Description-en-US: Bake All MoGraph
 
 by
 Donovan Keith

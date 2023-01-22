@@ -1,5 +1,5 @@
 """
-Split Keys v0.01
+Split Keys
 Takes the selected keys and splits them into two keys.
 Written for CINEMA 4D R14.025
 

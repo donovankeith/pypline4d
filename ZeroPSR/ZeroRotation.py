@@ -1,5 +1,5 @@
 """
-Zero Rotation v0.01
+Zero Rotation
 Takes the currently selected objects and sets their rotation to 0,0,0
 
 by

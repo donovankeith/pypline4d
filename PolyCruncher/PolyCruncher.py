@@ -1,4 +1,4 @@
-'''Name-en-US: Poly Cruncher 0.1
+'''Name-en-US: Poly Cruncher
 Description-en-US: Takes the actively selected object and reduces the polygon count by 90%.
 
 Written By

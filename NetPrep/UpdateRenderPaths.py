@@ -1,5 +1,5 @@
-"""Name-US: Update Render Paths
-Description-US: Update Render Paths :: Updates the render save paths to match the file name.
+"""Name-en-US: Update Render Paths
+Description-en-US: Update Render Paths :: Updates the render save paths to match the file name.
 
 UpdateRenderPaths v0.1 (August 4, 2011)
 copyright Donovan Keith, 2011

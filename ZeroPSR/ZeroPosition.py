@@ -1,5 +1,5 @@
 """
-Zero Position v0.01
+Zero Position
 Takes the currently selected objects and sets their position to 0,0,0
 
 by

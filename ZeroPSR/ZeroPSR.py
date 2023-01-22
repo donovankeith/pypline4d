@@ -1,5 +1,5 @@
 """
-Zero PSR v0.01
+Zero PSR
 Takes the currently selected objects and sets their Position/Rotation to 0,0,0 sets scale to 1,1,1
 
 by

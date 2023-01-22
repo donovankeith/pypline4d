@@ -1,4 +1,4 @@
-"""Name-en-US: Animate on Spline v0.01
+"""Name-en-US: Animate on Spline
 Description-en-US: Creates an Align To Spline tag with keys at the start/end of animation.
 
 Written for CINEMA 4D R14.025

@@ -1,5 +1,5 @@
-"""Name-US: NetRender Paths
-Description-US: NetRender Paths :: Updates the render save paths to match the file name with no path.
+"""Name-en-US: NetRender Paths
+Description-en-US: NetRender Paths :: Updates the render save paths to match the file name with no path.
 
 NetRenderPaths v0.2 (August 14, 2011)
 copyright Donovan Keith, 2011
