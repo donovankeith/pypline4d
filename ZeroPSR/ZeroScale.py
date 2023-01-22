@@ -1,6 +1,3 @@
-import c4d
-from c4d import gui
-
 """
 Zero Scale v0.01
 Takes the currently selected objects and sets their scale to 1, 1, 1
@@ -11,6 +8,9 @@ Donovan Keith
 TO DO:
 Rename to have it make more sense.
 """
+
+import c4d
+from c4d import gui
 
 
 def main():

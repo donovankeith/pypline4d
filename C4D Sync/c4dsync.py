@@ -1,6 +1,6 @@
-"""
-C4D Sync v0.01
-Reroutes Cinema 4D preferences to a directory in your DropBox.
+"""Name-en-US: C4D Sync
+Description-en-US: Reroutes Cinema 4D preferences to a directory in your DropBox.
+
 Written for CINEMA 4D R14.025
 
 LICENSE:
@@ -39,6 +39,7 @@ v0.02: Added undo, and corrected key spacing. Auto-add
 
 Name-US: Camera Morph Keys
 Description-US: Creates a keyframe for each camera in the selected camera morph tag.
+"""
 
 import c4d
 import os
@@ -73,12 +74,12 @@ def main():
     usr_path_documents = c4d.storage.GeGetC4DPath(c4d.C4D_PATH_MYDOCUMENTS)
 
     if debug:
-        print usr_path_prefs
-        print usr_path_resource
-        print usr_path_library
-        print usr_path_home
-        print usr_path_startup
-        print usr_path_home
+        print(usr_path_prefs)
+        print(usr_path_resource)
+        print(usr_path_library)
+        print(usr_path_home)
+        print(usr_path_startup)
+        print(usr_path_home)
     
     #Open a file picker
     usr_save_to = c4d.storage.LoadDialog(
@@ -87,12 +88,12 @@ def main():
         flags=c4d.FILESELECT_DIRECTORY, 
         def_path=usr_path_desktop)
         
-    print "User said to save here: ", usr_save_to
+    print("User said to save here: ", usr_save_to)
 
     save_to = os.path.join(usr_save_to,"C4D Sync")
-    print save_to
+    print(save_to)
     
-    print "Creating symlink... ", symlink(usr_path_documents, save_to)
+    print("Creating symlink... ", symlink(usr_path_documents, save_to))
 
 if __name__=='__main__':
     main()

@@ -1,6 +1,6 @@
-"""
-Make Environment Map v0.01
-Renders an environment map for the selected object.
+"""Name-en-US: Make Environment Map v0.01
+Description-en-US: Renders an environment map for the selected object.
+
 Written for CINEMA 4D R14.025
 
 LICENSE:

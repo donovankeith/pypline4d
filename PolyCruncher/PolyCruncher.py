@@ -1,30 +1,29 @@
-import c4d
-from c4d import gui
-
-'''
-Poly Cruncher 0.1
-Takes the actively selected object and reduces the polygon count by 90%.
+'''Name-en-US: Poly Cruncher 0.1
+Description-en-US: Takes the actively selected object and reduces the polygon count by 90%.
 
 Written By
 Donovan Keith
 2011
 '''
 
+import c4d
+from c4d import gui
+
 
 def groupObjects():
-    print "groupObjects()"
+    print("groupObjects()")
     return c4d.CallCommand(100004772) #Group Objects
 
 def currentStateToObject():
-    print "currentStateToObject()"
+    print("currentStateToObject()")
     return c4d.CallCommand(12233) #Current State to Object
 
 def deleteSelectedObject():
-    print "deleteSelectedObject()"
+    print("deleteSelectedObject()")
     return c4d.CallCommand(100004787) #Delecte selected Object
 
 def main():
-    print "main()"
+    print("main()")
 
     #Get Active Object
     doc = c4d.documents.GetActiveDocument()
@@ -41,7 +40,7 @@ def main():
     c4d.CallCommand(1001253) #Poly Reduction
     cruncher = doc.GetActiveObject()
     if cruncher is None:
-        print "PolyReduction object was not created"
+        print("PolyReduction object was not created")
         return False
 
 

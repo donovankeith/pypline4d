@@ -1,13 +1,12 @@
-"""
+"""Name-US: Update Render Paths
+Description-US: Update Render Paths :: Updates the render save paths to match the file name.
+
 UpdateRenderPaths v0.1 (August 4, 2011)
 copyright Donovan Keith, 2011
 
 License: MIT
  
 Written for CINEMA 4D R12.048
-
-Name-US: Update Render Paths
-Description-US: Update Render Paths :: Updates the render save paths to match the file name.
 
 KNOWN BUGS:
 	Doesn't clean up "Render Settings" names, so if the user has a "/" in the name
@@ -22,7 +21,7 @@ import wave
 debug = False
 
 def printName( atom ):
-	print atom.GetName()
+	print(atom.GetName())
 
 def getNextItem( item ):
 	if item is None: return None
@@ -38,7 +37,7 @@ def main():
 	"""
 	"""
 	if debug:
-		print "main()"
+		print("main()")
 	
 	#Get Doc Path
 	doc_path = doc.GetDocumentPath()
@@ -53,8 +52,8 @@ def main():
 	doc_name = os.path.splitext( doc_filename )[0]
 	
 	if debug:
-		print "doc_name = ", doc_name
-		print "doc_path = ", doc_path
+		print("doc_name = ", doc_name)
+		print("doc_path = ", doc_path)
 
 	#If the "renders" folder doesn't exist, create it.
 	renders_path = os.path.join( doc_path, "renders" )

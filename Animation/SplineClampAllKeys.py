@@ -1,3 +1,7 @@
+"""Name-en-US: Spline Clamp All Keys
+Description-en-US: Selects all keys and to Smooth and Clamped.
+"""
+
 import c4d
 from c4d import gui
 

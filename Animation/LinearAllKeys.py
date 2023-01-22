@@ -1,3 +1,7 @@
+"""Name-en-US: Linear All Keys
+Description-en-US: Selects all keys and sets them to Linear interpolation
+"""
+
 import c4d
 from c4d import gui
 

@@ -1,7 +1,3 @@
-import c4d
-from c4d import gui
-#Welcome to the world of Python
-
 """
 Zero PSR v0.01
 Takes the currently selected objects and sets their Position/Rotation to 0,0,0 sets scale to 1,1,1
@@ -16,6 +12,10 @@ v0.0: Main functionality implemented
 TO DO:
 * Add an undo buffer
 """
+
+import c4d
+from c4d import gui
+#Welcome to the world of Python
 
 def main():
     #Get the active objects

@@ -1,6 +1,6 @@
-"""
-ScriptName v0.01
-Script does these things.
+"""Name-en-US: ScriptName v0.01
+Description-en-US: Script does these things.
+
 Written for CINEMA 4D R14.025
 
 LICENSE:

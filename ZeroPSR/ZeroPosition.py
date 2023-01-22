@@ -1,7 +1,3 @@
-import c4d
-from c4d import gui
-#Welcome to the world of Python
-
 """
 Zero Position v0.01
 Takes the currently selected objects and sets their position to 0,0,0
@@ -13,6 +9,11 @@ CHANGELOG:
 v0.1: Updated active object loop to be R13 compatible.
 v0.0: Main functionality implemented
 """
+
+import c4d
+from c4d import gui
+#Welcome to the world of Python
+
 
 def main():
     #Get the active objects

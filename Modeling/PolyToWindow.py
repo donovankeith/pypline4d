@@ -1,5 +1,5 @@
-"""Polys to Window
-Converts the currently selected polygon objects to windows
+"""Name-en-US: Polys to Window
+Description-en-US: Converts the currently selected polygon objects to windows
 """
 
 import c4d

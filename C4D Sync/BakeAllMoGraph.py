@@ -1,13 +1,12 @@
-"""Name-en-US: Bake All Mograph
-Description-en-US:  Bake All MoGraph v0.1
+"""
+    Bake All MoGraph v0.1
+    by
+    Donovan Keith
+    
+    written for C4D v12.048
 
-by
-Donovan Keith
-
-written for C4D v12.048
-
-TO DO:
-* Use generic type names instead of specific ID's
+    TO DO:
+    * Use generic type names instead of specific ID's
 """
 
 import c4d

@@ -1,13 +1,12 @@
-"""
+"""Name-US: NetRender Paths
+Description-US: NetRender Paths :: Updates the render save paths to match the file name with no path.
+
 NetRenderPaths v0.2 (August 14, 2011)
 copyright Donovan Keith, 2011
 
 License: MIT
  
 Written for CINEMA 4D R12.048
-
-Name-US: NetRender Paths
-Description-US: NetRender Paths :: Updates the render save paths to match the file name with no path.
 
 KNOWN BUGS:
 	Doesn't clean up "Render Settings" names, so if the user has a "/" in the name
@@ -22,7 +21,7 @@ import wave
 debug = False
 
 def printName( atom ):
-	print atom.GetName()
+	print(atom.GetName())
 
 def getNextItem( item ):
 	if item is None: return None
@@ -38,7 +37,7 @@ def main():
 	"""
 	"""
 	if debug:
-		print "main()"
+		print("main()")
 	
 	#Get Doc Path
 	doc_path = doc.GetDocumentPath()

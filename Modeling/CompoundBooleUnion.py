@@ -1,5 +1,5 @@
-"""Compound Boolean Union v0.01
-Takes all selected objects, and combines them into a nested boolean hierarchy
+"""Name-en-US: Compound Boolean Union v0.01
+Description-en-US: Takes all selected objects, and combines them into a nested boolean hierarchy
 Written for CINEMA 4D R14.025
 
 LICENSE:
@@ -76,11 +76,11 @@ def main():
     prev_boole = make_boole_union(objs[1].GetClone(c4d.COPYFLAGS_NO_HIERARCHY), objs[0].GetClone(c4d.COPYFLAGS_NO_HIERARCHY))
 
     latter_objs = objs[2:]
-    print latter_objs
+    print(latter_objs)
 
     for obj in latter_objs:
-        print "In the latter_objs"
-        print obj.GetName()
+        print("In the latter_objs")
+        print(obj.GetName())
         prev_boole = make_boole_union(obj.GetClone(c4d.COPYFLAGS_NO_HIERARCHY), prev_boole.GetClone())
 
     #Add the objects to the document    

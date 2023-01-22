@@ -1,7 +1,7 @@
-"""
-CameraMorphKeys v0.02
-Takes first selected CameraMorph tag and automatically add keys based on the
+"""Name-en-US: CameraMorphKeys v0.02
+Description-en-US: Takes first selected CameraMorph tag and automatically add keys based on the
 number of objects in the multi-morph list.
+
 Written for CINEMA 4D R14.025
 
 LICENSE:

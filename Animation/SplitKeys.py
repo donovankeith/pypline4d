@@ -149,9 +149,11 @@ def main():
             #Loop through selected keys:
             if selected_keys == []: continue
             
-            if debug == True: print obj.GetName() + ', ' + track.GetName() + ':'
+            if debug == True:
+                print(obj.GetName() + ', ' + track.GetName() + ':')
             for key in selected_keys:
-                if debug == True: print key.GetValue()
+                if debug == True:
+                    print(key.GetValue())
 
     doc.EndUndo()
 
