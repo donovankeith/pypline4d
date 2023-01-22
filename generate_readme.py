@@ -1,5 +1,5 @@
 """generate_docs.py
-Createas TOC.md which lists all .py files in this repo.
+Creates README.md which lists all .py files in this repo.
 """
 
 import os

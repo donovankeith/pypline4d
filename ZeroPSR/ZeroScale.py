@@ -1,6 +1,6 @@
 """
 Zero Scale
-Takes the currently selected objects and sets their scale to 1, 1, 1
+Despite the name, this sets Scale of active objects to (1, 1, 1). Think of "zero" as "reset".
 
 by
 Donovan Keith

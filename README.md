@@ -4,7 +4,7 @@ A series of utility scripts for Maxon's Cinema 4D (c4d)## pypline4d
 
 | Name | Description |
 |------|-------------|
-| [generate_docs.py](generate_readme.py) | Createas TOC.md which lists all .py files in this repo. |
+| [generate_docs.py](generate_readme.py) | Creates README.md which lists all .py files in this repo. |
 
 ## UI
 
@@ -63,10 +63,10 @@ A series of utility scripts for Maxon's Cinema 4D (c4d)## pypline4d
 
 | Name | Description |
 |------|-------------|
-| [Zero Rotation](ZeroPSR/ZeroRotation.py) | Takes the currently selected objects and sets their rotation to 0,0,0 |
-| [Zero Scale](ZeroPSR/ZeroScale.py) | Takes the currently selected objects and sets their scale to 1, 1, 1 |
-| [Zero Position](ZeroPSR/ZeroPosition.py) | Takes the currently selected objects and sets their position to 0,0,0 |
-| [Zero PSR](ZeroPSR/ZeroPSR.py) | Takes the currently selected objects and sets their Position/Rotation to 0,0,0 sets scale to 1,1,1 |
+| [Zero Rotation](ZeroPSR/ZeroRotation.py) | Sets rotation of active objects to (0, 0, 0) |
+| [Zero Scale](ZeroPSR/ZeroScale.py) | Despite the name, this sets Scale of active objects to (1, 1, 1). Think of "zero" as "reset". |
+| [Zero Position](ZeroPSR/ZeroPosition.py) | Sets position of active objects to (0, 0, 0) |
+| [Zero PSR](ZeroPSR/ZeroPSR.py) | Sets Position/Rotation of active objects to (0, 0, 0) and Scale to (1, 1, 1). |
 
 ## NetPrep
 

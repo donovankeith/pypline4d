@@ -1,6 +1,6 @@
 """
 Zero Position
-Takes the currently selected objects and sets their position to 0,0,0
+Sets position of active objects to (0, 0, 0)
 
 by
 Donovan Keith

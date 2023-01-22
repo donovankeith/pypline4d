@@ -1,6 +1,6 @@
 """
 Zero Rotation
-Takes the currently selected objects and sets their rotation to 0,0,0
+Sets rotation of active objects to (0, 0, 0)
 
 by
 Donovan Keith

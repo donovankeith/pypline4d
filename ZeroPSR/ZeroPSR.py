@@ -1,6 +1,6 @@
 """
 Zero PSR
-Takes the currently selected objects and sets their Position/Rotation to 0,0,0 sets scale to 1,1,1
+Sets Position/Rotation of active objects to (0, 0, 0) and Scale to (1, 1, 1).
 
 by
 Donovan Keith
