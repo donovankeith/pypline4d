@@ -9,7 +9,7 @@ import ast
 def list_py_scripts(root_dir):
     header = """# pypline4d
 
-A series of utility scripts for Maxon's Cinema 4D (c4d)"""
+A series of utility scripts for Maxon's Cinema 4D (C4D)"""
 
     toc = ""
 
